@@ -1,23 +1,26 @@
-import express from "express"
-const userRoutes=express.Router();
+import express from "express";
+import { regiter } from "../controler/userConmtroller.js";
+import { sendMail } from "../controler/sendMail.js"
 
-//GET
+const userRoute = express.Router();
 
-
-//POST
-
-userRoutes.post("/register",(req,res)=>{
-    const {name}=req.body;
-    res.status(200).json({data:`Welcome"${name}`})
-})
-
-//PUT
+// GET
 
 
-//DELETE
+// POST
+
+userRoute.post("/register",regiter)
+
+userRoute.post("/send-email",sendMail)
+
+
+// PUT
+
+
+// DELETE
 
 
 
 
 
-export default userRoutes
+export default userRoute
